@@ -270,6 +270,16 @@ const Figma: HeartbeatParser = (_url: string): OptionalHeartbeat | undefined => 
   };
 };
 
+const OnnsRead: HeartbeatParser = (_url: string): OptionalHeartbeat | undefined => {
+  const project = document.title;
+  return {
+    category: Category.learning,
+    language: 'Text',
+    plugin: 'Onns Read',
+    project,
+  };
+};
+
 const GoogleMeet: HeartbeatParser = (_url: string): OptionalHeartbeat | undefined => {
   const meetId = document.querySelector('[data-meeting-title]')?.getAttribute('data-meeting-title');
   if (!meetId) return;
@@ -352,6 +362,10 @@ const SITES: Record<KnownSite, SiteParser> = {
   figma: {
     parser: Figma,
     urls: ['figma.com'],
+  },
+  onnsread: {
+    parser: OnnsRead,
+    urls: ['sh.onns.xyz:16800'],
   },
   github: {
     parser: GitHub,

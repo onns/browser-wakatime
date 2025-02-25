@@ -13,6 +13,7 @@ export enum KnownSite {
   travisci = 'travisci',
   vercel = 'vercel',
   zoom = 'zoom',
+  onnsread = "onnsread",
 }
 
 export interface OptionalHeartbeat {

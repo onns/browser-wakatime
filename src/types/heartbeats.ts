@@ -18,6 +18,7 @@ export enum Category {
   debugging = 'debugging',
   designing = 'designing',
   meeting = 'meeting',
+  learning = 'learning',
 }
 
 export enum EntityType {
