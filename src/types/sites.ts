@@ -8,6 +8,7 @@ export enum KnownSite {
   github = 'github',
   gitlab = 'gitlab',
   googlemeet = 'googlemeet',
+  msteams = 'msteams',
   slack = 'slack',
   stackoverflow = 'stackoverflow',
   travisci = 'travisci',
@@ -30,6 +31,7 @@ export type HeartbeatParser = (url: string) => OptionalHeartbeat | undefined;
 
 export interface SiteParser {
   parser: HeartbeatParser;
+  trackWithoutMouseMoving?: boolean;
   urls: RegExp[] | string[];
 }
 
